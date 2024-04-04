@@ -44,7 +44,6 @@ def main():
     model_path = 'models/'
     to_load = data_utils.load_file(model_path + file_name + '.pickle')
     transport_model = to_load['model']
-    print(to_load['hyperparameters'])
 
     # model predictions
     predictions, trajectory = transport_model.transform(X, num_steps=num_steps,
@@ -56,7 +55,7 @@ def main():
     # Setup the figure and axis
     fig = plt.figure(figsize=(3, 3))
     ax = fig.add_subplot(111)
-    ax.set_title('Trajectory')
+    # ax.set_title('Trajectory')
     ax.set_xlim(-3, 3)
     ax.set_ylim(-3, 3)
     ax.set_xticks([])
@@ -68,11 +67,11 @@ def main():
     end_markers = []
 
     for i in range(sel_trajectory.shape[1]):  # Loop over particles
-        path, = ax.plot([], [], 'r-', lw=0.5)  # Path for each trajectory
+        path, = ax.plot([], [], 'r-', lw=2)  # Path for each trajectory
         start_marker, = ax.plot([], [], 'o', mec='black', mfc='None',
-                                markersize=3)  # Start marker
+                                markersize=5)  # Start marker
         end_marker, = ax.plot([], [], 'o', mec='black', mfc='black',
-                              markersize=3)  # End marker
+                              markersize=5)  # End marker
         paths.append(path)
         start_markers.append(start_marker)
         end_markers.append(end_marker)

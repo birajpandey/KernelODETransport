@@ -2,7 +2,7 @@ import argparse
 import pprint
 import os
 import time
-os.environ["CUDA_VISIBLE_DEVICES"] = '1'
+os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"]="false"
 
 import equinox as eqx
